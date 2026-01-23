@@ -2,20 +2,24 @@
 import { useState } from "react";
 
 export default function ReactForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [form, setForm] = useState({ name: "", email: "" });
   const [error, setError] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!name || !email) {
+    if (!form.name || !form.email) {
       setError("Please fill in both fields.");
       return;
     }
 
     setError("");
-    alert(`Name: ${name}, Email: ${email}`);
+    alert(`Name: ${form.name}, Email: ${form.email}`);
   };
 
   return (
@@ -34,9 +38,9 @@ export default function ReactForm() {
           id="name"
           name="name"
           type="text"
-          value={name}
+          value={form.name}
           placeholder="Enter your full name"
-          onChange={(e) => setName(e.target.value)}
+          onChange={handleChange}
           className="w-full border border-gray-300 rounded-lg p-2"
           required
         />
@@ -51,21 +55,21 @@ export default function ReactForm() {
           id="email"
           name="email"
           type="email"
-          value={email}
+          value={form.email}
           placeholder="Enter your email address"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleChange}
           className="w-full border border-gray-300 rounded-lg p-2"
           required
         />
       </div>
       {error && <p className="text-red-500">{error}</p>}
       <br />
-      <button onClick={handleSubmit} className="button_style">
+      <button type="submit" className="button_style">
         Submit
       </button>
 
-      <p>Your name is: {name}</p>
-      <p>Your email is: {email}</p>
+      {/* <p>Your name is: {form.name}</p>
+      <p>Your email is: {form.email}</p> */}
     </form>
   );
 }
