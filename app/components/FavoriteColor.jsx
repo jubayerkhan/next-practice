@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, scale } from "motion/react";
+import AnimateButton from "./AnimateButton";
 
 export default function FavoriteColor() {
   const [color, setColor] = useState("blue");
@@ -73,13 +74,14 @@ export default function FavoriteColor() {
         >
           Blue
         </motion.button>
-        <motion.button
+        {/* <motion.button
           whileHover={{ scale: 1.1 }}
           className="button_style"
           onClick={() => setColor("red")}
         >
           Red
-        </motion.button>
+        </motion.button> */}
+        <AnimateButton onClick={() => setColor("red")}>RED</AnimateButton>
         <motion.button
           whileHover={{ scale: 1.1 }}
           className="button_style"

@@ -15,7 +15,7 @@ export default function Home() {
       {/* <Counter /> */}
       {/* <Toggle /> */}
       {/* <ReactForm /> */}
-      <AnimateButton stiffness={300} damping={15}>Blue</AnimateButton>
+      {/* <AnimateButton stiffness={300} damping={15}>Blue</AnimateButton> */}
       <FeaturesList />
     </div>
   );

@@ -1,11 +1,11 @@
 "use client";
-import { useState } from "react";
-import { motion, scale } from "motion/react";
+import { motion, } from "motion/react";
 
 export default function AnimateButton({
-    children,
-    stiffness = 300,
-    damping = 15,
+  children,
+  stiffness = 300,
+  damping = 15,
+  onClick,
 }) {
   return (
     <motion.button
@@ -13,7 +13,7 @@ export default function AnimateButton({
       whileTap={{ scale: 0.9, y: 1 }}
       transition={{ type: "spring", stiffness, damping }}
       className="button_style"
-      onClick={() => setColor("blue")}
+      onClick={onClick}
     >
       {children}
     </motion.button>
