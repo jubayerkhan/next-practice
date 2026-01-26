@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion, scale } from "motion/react";
 
 export default function FavoriteColor() {
   const [color, setColor] = useState("blue");
@@ -30,37 +31,70 @@ export default function FavoriteColor() {
   };
 
   return (
-    <>
-      <h1
-        className={`rounded-2xl p-4 text-white transition-all duration-300 ${
+    <div className="mt-10">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className={`rounded-2xl p-4 text-white transition-all duration-300 text-2xl font-medium ${
           bgColorMap[color]
         }`}
       >
         My favorite color is {color}!
-      </h1>
-      <p
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
         className={`mt-5 rounded-2xl p-3 transition-all duration-300 ${bgColorMap[color]}`}
       >
         Click a button to change the background color.
-      </p>
-      <h3 className={`mt-5 text-2xl font-semibold transition-all duration-300 ${colorConfig[color].className}`}>
+      </motion.p>
+      <motion.h3
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className={`mt-5 text-2xl font-semibold transition-all duration-300 ${colorConfig[color].className}`}
+      >
         {colorConfig[color].text}
-      </h3>
-
-      <div className="flex gap-5 pt-10">
-        <button className="button_style" onClick={() => setColor("blue")}>
+      </motion.h3>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="flex gap-5 pt-10"
+      >
+        <motion.button
+          whileHover={{ scale: 1.1, y: -2 }}
+          whileTap={{ scale: 0.9, y: 1 }}
+          transition={{ type: "spring", stiffness: 300, damping: 15 }}
+          className="button_style"
+          onClick={() => setColor("blue")}
+        >
           Blue
-        </button>
-        <button className="button_style" onClick={() => setColor("red")}>
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          className="button_style"
+          onClick={() => setColor("red")}
+        >
           Red
-        </button>
-        <button className="button_style" onClick={() => setColor("pink")}>
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          className="button_style"
+          onClick={() => setColor("pink")}
+        >
           Pink
-        </button>
-        <button className="button_style" onClick={() => setColor("green")}>
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          className="button_style"
+          onClick={() => setColor("green")}
+        >
           Green
-        </button>
-      </div>
-    </>
+        </motion.button>
+      </motion.div>
+    </div>
   );
 }
