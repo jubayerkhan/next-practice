@@ -17,7 +17,7 @@ export default function Home() {
       {/* <Toggle /> */}
       {/* <ReactForm /> */}
       <FeaturesList />
-      <DragCard />
+      {/* <DragCard /> */}
     </div>
   );
 }
