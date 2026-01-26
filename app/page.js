@@ -5,6 +5,7 @@ import Toggle from "./components/Toggle";
 import ReactForm from "./components/ReactForm";
 import AnimateButton from "./components/AnimateButton";
 import FeaturesList from "./components/FeaturesList";
+import DragCard from "./components/DragCard";
 
 export default function Home() {
   return (
@@ -15,8 +16,8 @@ export default function Home() {
       {/* <Counter /> */}
       {/* <Toggle /> */}
       {/* <ReactForm /> */}
-      {/* <AnimateButton stiffness={300} damping={15}>Blue</AnimateButton> */}
       <FeaturesList />
+      <DragCard />
     </div>
   );
 }
