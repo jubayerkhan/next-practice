@@ -6,6 +6,9 @@ import ReactForm from "./components/ReactForm";
 import AnimateButton from "./components/AnimateButton";
 import FeaturesList from "./components/FeaturesList";
 import DragCard from "./components/DragCard";
+import StickyCards from "./components/StickyCards";
+import StickyCards2 from "./components/StickyCards2";
+import StickyCards3 from "./components/StickyCards3";
 
 export default function Home() {
   return (
@@ -15,9 +18,11 @@ export default function Home() {
       </header>
       {/* <Counter /> */}
       {/* <Toggle /> */}
-      {/* <ReactForm /> */}
       <FeaturesList />
       {/* <DragCard /> */}
+      {/* <StickyCards /> */}
+      <StickyCards3 />
+      <ReactForm />
     </div>
   );
 }
