@@ -25,7 +25,7 @@ export default function ReactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-md mx-auto mt-10 p-5 border rounded-lg"
+      className="max-w-md mx-auto my-6 p-5 border rounded-lg"
     >
       <h2 className="text-xl font-semibold mb-4">User Form</h2>
 

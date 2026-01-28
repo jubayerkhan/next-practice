@@ -47,10 +47,11 @@ export default function SlideUpStack() {
               }}
               className={`absolute h-[50vh] w-full max-w-4xl
                 rounded-3xl ${card.color}
-                flex items-center justify-center
-                text-white text-4xl font-bold shadow-2xl`}
+                flex flex-col items-center justify-center
+                text-white shadow-2xl p-6`}
             >
-              {card.title}
+              <h2 className="text-2xl font-bold">{card.title}</h2>
+              <p className="font-light mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab expedita dolore reprehenderit excepturi optio dolorum tempore illum fuga. Maiores veniam saepe pariatur ad suscipit porro iure veritatis nostrum perferendis.</p>
             </motion.div>
           );
         })}
