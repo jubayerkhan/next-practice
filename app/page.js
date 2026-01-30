@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FavoriteColor from "./components/FavoriteColor";
 import Counter from "./components/Counter";
+import Counter2 from "./components/Counter2";
 import Toggle from "./components/Toggle";
 import ReactForm from "./components/ReactForm";
 import AnimateButton from "./components/AnimateButton";
@@ -9,20 +10,26 @@ import DragCard from "./components/DragCard";
 import StickyCards from "./components/StickyCards";
 import StickyCards2 from "./components/StickyCards2";
 import StickyCards3 from "./components/StickyCards3";
+import ThemeSwitcher from "./components/ThemeSwitcher";
+import UseEffectExample from "./components/UseEffectExample";
+import Users from "./components/Users";
 
 export default function Home() {
   return (
     <div>
       <header className="pt-5 mb-5">
-        <FavoriteColor />
+        {/* <FavoriteColor /> */}
       </header>
-      {/* <Counter /> */}
+      {/* <Counter2 /> */}
       {/* <Toggle /> */}
-      <FeaturesList />
+      {/* <FeaturesList /> */}
       {/* <DragCard /> */}
       {/* <StickyCards /> */}
-      <StickyCards3 />
-      <ReactForm />
+      {/* <StickyCards3 /> */}
+      {/* < ThemeSwitcher /> */}
+      {/* <UseEffectExample /> */}
+      {/* <ReactForm /> */}
+      <Users />
     </div>
   );
 }

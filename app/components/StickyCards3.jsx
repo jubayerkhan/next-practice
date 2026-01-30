@@ -28,14 +28,10 @@ export default function SlideUpStack() {
           const y = useTransform(
             scrollYProgress,
             [start, end],
-            [0, -300] // 👈 fully slides out upward
+            [0, -300], // 👈 fully slides out upward
           );
 
-          const opacity = useTransform(
-            scrollYProgress,
-            [start, end],
-            [1, 0]
-          );
+          const opacity = useTransform(scrollYProgress, [start, end], [1, 0]);
 
           return (
             <motion.div
@@ -51,7 +47,12 @@ export default function SlideUpStack() {
                 text-white shadow-2xl p-6`}
             >
               <h2 className="text-2xl font-bold">{card.title}</h2>
-              <p className="font-light mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab expedita dolore reprehenderit excepturi optio dolorum tempore illum fuga. Maiores veniam saepe pariatur ad suscipit porro iure veritatis nostrum perferendis.</p>
+              <p className="font-light mt-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab
+                expedita dolore reprehenderit excepturi optio dolorum tempore
+                illum fuga. Maiores veniam saepe pariatur ad suscipit porro iure
+                veritatis nostrum perferendis.
+              </p>
             </motion.div>
           );
         })}
