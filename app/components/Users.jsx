@@ -22,7 +22,10 @@ export default function Users() {
   return (
     <ul>
       {users.map((user) => (
-        <li className="p-2 bg-gray-200 mb-1" key={user.id}>{user.name}</li>
+        <li className="p-2 bg-gray-200 mb-1" key={user.id}>
+            <p>{user.name}</p>
+            <p>{user.phone}</p>
+        </li>
       ))}
     </ul>
   );
