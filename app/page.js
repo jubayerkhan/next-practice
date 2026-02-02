@@ -13,13 +13,13 @@ import StickyCards3 from "./components/StickyCards3";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 import UseEffectExample from "./components/UseEffectExample";
 import Users from "./components/Users";
+import Posts from "./components/Posts";
+import FetchData from "./components/FetchData";
 
 export default function Home() {
   return (
     <div>
-      <header className="pt-5 mb-5">
-        {/* <FavoriteColor /> */}
-      </header>
+      <header className="pt-5 mb-5">{/* <FavoriteColor /> */}</header>
       {/* <Counter2 /> */}
       {/* <Toggle /> */}
       {/* <FeaturesList /> */}
@@ -29,7 +29,9 @@ export default function Home() {
       {/* < ThemeSwitcher /> */}
       {/* <UseEffectExample /> */}
       {/* <ReactForm /> */}
-      <Users />
+      {/* <Users /> */}
+      <Posts />
+      {/* <FetchData /> */}
     </div>
   );
 }
