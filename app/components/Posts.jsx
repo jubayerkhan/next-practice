@@ -1,7 +1,6 @@
 "use client";
-
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Posts() {
   const [posts, setPosts] = useState([]);
@@ -51,20 +50,23 @@ export default function Posts() {
           ))}
         </ul>
       ) : (
-        <motion.ul variants={container} initial="hidden" animate="show">
+        <AnimatePresence>
           {posts.slice(0, visible).map((post) => (
             <motion.li
               key={post.id}
               variants={item}
+              initial="hidden"
+              animate="show"
+              exit={{ opacity: 0 }}
               className="p-2 bg-gray-200 mb-1 rounded"
             >
               {post.title}
             </motion.li>
           ))}
-        </motion.ul>
+        </AnimatePresence>
       )}
 
-      {!loading && visible < posts.length && (
+      {visible < posts.length && (
         <button
           className="button_style"
           onClick={() => setVisible(visible + 25)}
