@@ -58,7 +58,7 @@ export default function Posts() {
               initial="hidden"
               animate="show"
               exit={{ opacity: 0 }}
-              className="p-2 bg-gray-200 mb-1 rounded"
+              className="p-2 bg-gray-200 mb-1 rounded list-none"
             >
               {post.title}
             </motion.li>

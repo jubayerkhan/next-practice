@@ -30,8 +30,8 @@ export default function Home() {
       {/* <UseEffectExample /> */}
       {/* <ReactForm /> */}
       {/* <Users /> */}
-      <Posts />
-      {/* <FetchData /> */}
+      {/* <Posts /> */}
+      <FetchData />
     </div>
   );
 }
