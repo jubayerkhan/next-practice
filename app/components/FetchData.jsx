@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 export default async function FetchData() {
-  const data = await fetch("https://api.vercel.app/blog");
+  const data = await fetch(process.env.BLOG_API_URL);
   const blogs = await data.json();
 
   // container animation
@@ -24,9 +24,11 @@ export default async function FetchData() {
     },
   };
   return (
-    <ul >
+    <ul>
       {blogs.map((blog) => (
-        <li key={blog.id}>{blog.title}</li>
+        <li className="bg-gray-200 p-2 mb-1" key={blog.id}>
+          {blog.title}
+        </li>
       ))}
     </ul>
   );
