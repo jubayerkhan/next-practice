@@ -26,7 +26,7 @@ export default async function FetchData() {
   return (
     <ul>
       {blogs.map((blog) => (
-        <li className="bg-gray-200 p-2 mb-1" key={blog.id}>
+        <li className="bg-gray-200 p-2 mb-1 rounded-lg" key={blog.id}>
           {blog.title}
         </li>
       ))}
