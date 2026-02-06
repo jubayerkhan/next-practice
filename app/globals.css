@@ -1,7 +1,8 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 body {
-  @apply container mx-auto;
+  @apply container mx-auto bg-white;
 }
 
 .button_style {

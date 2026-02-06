@@ -15,6 +15,7 @@ import UseEffectExample from "./components/UseEffectExample";
 import Users from "./components/Users";
 import Posts from "./components/Posts";
 import FetchData from "./components/FetchData";
+import LoadingError from "./components/LoadingError";
 
 export default function Home() {
   return (
@@ -31,7 +32,8 @@ export default function Home() {
       {/* <ReactForm /> */}
       {/* <Users /> */}
       {/* <Posts /> */}
-      <FetchData />
+      {/* <FetchData /> */}
+      <LoadingError />
     </div>
   );
 }
