@@ -51,13 +51,14 @@ export default function Todos() {
 
       <ul className="mt-4">
         {todos.map(todo => (
-          <li key={todo._id}>
+          <li key={todo._id} className="flex gap-2">
             <span
               onClick={() => toggleTodo(todo._id, todo.completed)}
               className={todo.completed ? "line-through" : ""}
             >
               {todo.text}
             </span>
+            <p>{todo._id}</p>
             <button onClick={() => deleteTodo(todo._id)}> ❌ </button>
           </li>
         ))}
