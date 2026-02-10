@@ -44,13 +44,15 @@ export default function Todos() {
     <div className="p-6">
       <input
         value={text}
-        onChange={e => setText(e.target.value)}
+        onChange={(e) => setText(e.target.value)}
         className="border p-2 mr-2"
       />
-      <button onClick={addTodo}>Add</button>
+      <button className="button_style" onClick={addTodo}>
+        Add
+      </button>
 
       <ul className="mt-4">
-        {todos.map(todo => (
+        {todos.map((todo) => (
           <li key={todo._id} className="flex gap-2">
             <span
               onClick={() => toggleTodo(todo._id, todo.completed)}
