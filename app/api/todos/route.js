@@ -30,10 +30,12 @@ export async function PUT(req) {
   const client = await clientPromise;
   const db = client.db("crudApp");
 
-  await db.collection("todos").updateOne(
-    { _id: new ObjectId(body.id) },
-    { $set: { completed: body.completed } }
-  );
+  await db
+    .collection("todos")
+    .updateOne(
+      { _id: new ObjectId(body.id) },
+      { $set: { completed: body.completed } },
+    );
 
   return Response.json({ success: true });
 }
