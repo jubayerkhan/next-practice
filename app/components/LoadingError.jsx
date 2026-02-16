@@ -59,7 +59,7 @@ export default function LoadingError() {
           className="button_style"
           onClick={() => setVisible((v) => v + 25)}
         >
-          Load more
+          Load more...
         </button>
       )}
     </div>
