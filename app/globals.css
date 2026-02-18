@@ -149,3 +149,57 @@ If you use SASS you can shorten this one here like this:
     max-width: 42em;
   }
 }
+
+
+/* time slot css  */
+body, input, button {
+	font-family: "Jost",-apple-system,system-ui,BlinkMacSystemFont,
+	"Segoe UI",Roboto,sans-serif;
+}
+
+.title,.subtitle {
+	text-align: center;
+	font-weight: 500;
+}
+
+th:nth-child(1) {
+	background-color: red;
+}
+
+#nav-icon {
+	margin-right: 0.5em;
+}
+
+#nav-title {
+	font-size: 1.25rem;
+}
+
+.time {
+    font-size: 0.8rem;
+    font-weight: 400;
+    width: 50px;
+}
+
+table {
+	width: auto;
+    background-color: #D7D9F2;
+}
+
+.table td.is-booked {
+    background-color: #23D160;
+}
+
+.table td.is-blocked {
+    background-color: #363636;
+}
+
+.table td.is-selected {
+    background-color: #00D1B2;
+}
+
+.table td.is-cancelled {
+    background-color: #FF3860;
+}
+.table td {
+    width: 100px;
+}
