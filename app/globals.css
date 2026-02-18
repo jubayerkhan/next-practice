@@ -150,56 +150,69 @@ If you use SASS you can shorten this one here like this:
   }
 }
 
-
 /* time slot css  */
-body, input, button {
-	font-family: "Jost",-apple-system,system-ui,BlinkMacSystemFont,
-	"Segoe UI",Roboto,sans-serif;
+body,
+input,
+button {
+  font-family:
+    "Jost",
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
 }
 
-.title,.subtitle {
-	text-align: center;
-	font-weight: 500;
+.title,
+.subtitle {
+  text-align: center;
+  font-weight: 500;
 }
 
 th:nth-child(1) {
-	background-color: red;
+  background-color: red;
 }
 
 #nav-icon {
-	margin-right: 0.5em;
+  margin-right: 0.5em;
 }
 
 #nav-title {
-	font-size: 1.25rem;
+  font-size: 0.25rem;
 }
 
 .time {
-    font-size: 0.8rem;
-    font-weight: 400;
-    width: 50px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  width: 50px;
 }
 
 table {
-	width: auto;
-    background-color: #D7D9F2;
+  width: auto;
+  background-color: #d7d9f2;
+  font-size: 10px;
 }
 
 .table td.is-booked {
-    background-color: #23D160;
+  background-color: #23d160;
 }
 
 .table td.is-blocked {
-    background-color: #363636;
+  background-color: #363636;
 }
 
 .table td.is-selected {
-    background-color: #00D1B2;
+  background-color: #00d1b2;
 }
 
 .table td.is-cancelled {
-    background-color: #FF3860;
+  background-color: #ff3860;
 }
 .table td {
-    width: 100px;
+  width: 100px;
+}
+.table :where(th, td) {
+  padding-block: 0rem;
+  padding-inline: 1rem;
 }
