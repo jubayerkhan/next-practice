@@ -203,11 +203,13 @@ table {
 }
 
 .table td.is-selected {
-  background-color: #00d1b2;
+  background-color: #E5FFFE;
+  /* border-bottom: 1px solid #18c5c9; */
+  border: 1px solid #18c5c9;
 }
 
 .table td.is-cancelled {
-  background-color: #ff3860;
+  background-color: #FFF1E5;
 }
 .table td {
   width: 100px;

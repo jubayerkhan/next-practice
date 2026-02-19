@@ -1,0 +1,57 @@
+/* base cells */
+:global(td) {
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background-color: #f3f5f7;
+  /* border: 1px solid #e2e6ea; */
+}
+
+/* thicker line every hour */
+/* .hourRow :global(td) {
+  border-top: 2px solid #cfd8dc;
+} */
+
+/* ===== LEFT TIME LABELS ===== */
+
+.hourLabel {
+  color: #00bcd4;
+  font-weight: 700;
+}
+
+.minuteLabel {
+  color: #9aa0a6;
+  font-weight: 500;
+}
+
+/* ===== SELECTED (transparent blue) ===== */
+
+:global(.is-selected) {
+  background-color: #E5FFFE;
+}
+
+/* ===== BOOKED (solid gradient block) ===== */
+
+:global(.is-booked) {
+  background: linear-gradient(135deg, #18c5c9 0%, #0b5f63 100%);
+  color: white;
+}
+
+/* ===== BLOCKED (dark disabled) ===== */
+
+:global(.is-blocked) {
+  background: #263238;
+  cursor: not-allowed;
+}
+
+/* ===== CANCELLED (orange outline look) ===== */
+
+:global(.is-cancelled) {
+  background-color: #FFF1E5;
+  box-shadow: inset 0 0 0 2px #ff9800;
+}
+
+/* smoother hover like calendar */
+:global(td:hover:not(.is-booked):not(.is-blocked)) {
+  background-color: #E5FFFE;
+}
