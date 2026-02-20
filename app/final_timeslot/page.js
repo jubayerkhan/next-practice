@@ -149,7 +149,7 @@ export default function TimeSlot() {
           <div className="control">
             <button
               id="update-booking"
-              className="button is-link bg-blue-500 text-white px-2 rounded-[2px]"
+              className="button is-link bg-blue-500 text-white px-2 rounded-[2px] cursor-pointer"
             >
               Update Booking
             </button>
