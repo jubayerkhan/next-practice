@@ -124,7 +124,7 @@ export default function TimeSlot() {
 
               return (
                 <tr key={i}>
-                  <td className="bg-white! border-none w-10!">
+                  <td className="bg-white! border-none! w-10!">
                     <strong
                       className={`${minutes === 0 ? styles.hourLabel : styles.minuteLabel}`}
                     >

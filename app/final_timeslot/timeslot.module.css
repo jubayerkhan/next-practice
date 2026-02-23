@@ -48,7 +48,7 @@
 
 :global(.is-cancelled) {
   background-color: #FFF1E5;
-  box-shadow: inset 0 0 0 2px #ff9800;
+  box-shadow: inset 0 0 0 1px #ff9800;
 }
 
 /* smoother hover like calendar */
