@@ -64,7 +64,7 @@ export default function TimeSlot() {
       dragMode = null;
     });
 
-    // ✅ UPDATE BUTTON LOGIC
+    // UPDATE BUTTON LOGIC
     updateBtn.addEventListener("click", function () {
       updateBtn.classList.add("is-loading");
 
@@ -101,7 +101,7 @@ export default function TimeSlot() {
         >
           <thead>
             <tr className="bg-white">
-              <th className="!bg-white border-none w-auto"></th>
+              <th className="bg-white! border-none w-auto"></th>
               <th>Sat</th>
               <th>Sun</th>
               <th>Mon</th>
