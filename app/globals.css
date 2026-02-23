@@ -203,13 +203,17 @@ table {
 }
 
 .table td.is-selected {
-  background-color: #E5FFFE;
-  /* border-bottom: 1px solid #18c5c9; */
+  background-color: #e5fffe;
+  /* border-bottom: 1px solid #18c5c9;
+  border-inline: 1px solid #18c5c9; */
   border: 1px solid #18c5c9;
 }
+/* .table td.is-selected:first-child {
+  border-top: 1px solid #18c5c9;
+} */
 
 .table td.is-cancelled {
-  background-color: #FFF1E5;
+  background-color: #fff1e5;
 }
 .table td {
   width: 100px;
@@ -218,3 +222,8 @@ table {
   padding-block: 0rem;
   padding-inline: 1rem;
 }
+
+/* .table :where(thead tr :is(td), tbody tr:not(:last-child) :is(td)) {
+  border: var(--border) solid
+    color-mix(in oklch, var(--color-base-content) 5%, #0000);
+} */
