@@ -102,13 +102,13 @@ export default function TimeSlot() {
           <thead>
             <tr className="bg-white">
               <th className="bg-white! border-none w-auto"></th>
-              <th>Sat</th>
-              <th>Sun</th>
-              <th>Mon</th>
-              <th>Tue</th>
-              <th>Wed</th>
-              <th>Thu</th>
-              <th>Fri</th>
+              <th className="pb-2!">Sat</th>
+              <th className="pb-2!">Sun</th>
+              <th className="pb-2!">Mon</th>
+              <th className="pb-2!">Tue</th>
+              <th className="pb-2!">Wed</th>
+              <th className="pb-2!">Thu</th>
+              <th className="pb-2!">Fri</th>
             </tr>
           </thead>
 
