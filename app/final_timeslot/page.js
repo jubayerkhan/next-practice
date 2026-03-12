@@ -92,7 +92,7 @@ export default function TimeSlot() {
           .map(
             (d) =>
               `<p><strong>${d.day.toUpperCase()}</strong>: ${d.times
-                .map((t) => `${t.start} - ${t.end}`)
+                .map((t) => `${t.start - 15} - ${t.end}`)
                 .join(", ")}</p>`,
           )
           .join("");
@@ -178,8 +178,8 @@ export default function TimeSlot() {
 
           <tbody>
             {Array.from({ length: 96 }).map((_, i) => {
-              const hour = Math.floor(i / 4);
-              const minutes = (i % 4) * 15;
+              const hour = Math.floor((i + 1) / 4);
+              const minutes = ((i + 1) % 4) * 15;
 
               const label =
                 hour.toString().padStart(2, "0") +
