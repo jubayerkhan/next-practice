@@ -72,23 +72,87 @@ export default function TimeSlot() {
         for (let j = 1; j < table.rows[i].cells.length; j++) {
           const cell = table.rows[i].cells[j];
 
-          // Selected → Booked
           if (cell.classList.contains("is-selected")) {
             cell.classList.remove("is-selected");
             cell.classList.add("is-booked");
-          }
-
-          // Cancelled → Remove completely
-          else if (cell.classList.contains("is-cancelled")) {
+          } else if (cell.classList.contains("is-cancelled")) {
             cell.classList.remove("is-cancelled");
           }
         }
       }
 
+      // ⭐ GENERATE SUMMARY HERE
+      const summary = generateSummary();
+
+      const summaryDiv = document.getElementById("booking-summary");
+
+      summaryDiv.innerHTML =
+        "<h3>Booking Summary</h3>" +
+        summary
+          .map(
+            (d) =>
+              `<p><strong>${d.day.toUpperCase()}</strong>: ${d.times
+                .map((t) => `${t.start} - ${t.end}`)
+                .join(", ")}</p>`,
+          )
+          .join("");
+
+      console.log(summary);
+
       setTimeout(() => {
         updateBtn.classList.remove("is-loading");
       }, 500);
     });
+
+    // generate summery of bookings
+    function generateSummary() {
+      const days = ["sat", "sun", "mon", "tue", "wed", "thu", "fri"];
+      const result = [];
+
+      for (let d = 0; d < 7; d++) {
+        let daySlots = [];
+
+        for (let i = 1; i < table.rows.length; i++) {
+          const cell = table.rows[i].cells[d + 1];
+
+          if (cell.classList.contains("is-booked")) {
+            const label = table.rows[i].cells[0].innerText;
+            daySlots.push(label);
+          }
+        }
+
+        if (daySlots.length === 0) continue;
+
+        const times = [];
+        let start = daySlots[0];
+        let prev = daySlots[0];
+
+        for (let i = 1; i < daySlots.length; i++) {
+          const current = daySlots[i];
+
+          const prevDate = new Date(`1970-01-01T${prev}:00`);
+          const currDate = new Date(`1970-01-01T${current}:00`);
+
+          const diff = (currDate - prevDate) / 60000;
+
+          if (diff !== 15) {
+            times.push({ start, end: prev });
+            start = current;
+          }
+
+          prev = current;
+        }
+
+        times.push({ start, end: prev });
+
+        result.push({
+          day: days[d],
+          times,
+        });
+      }
+
+      return result;
+    }
   }, []);
 
   return (
@@ -134,9 +198,9 @@ export default function TimeSlot() {
 
                   <td></td>
                   <td></td>
-                  <td className={i === 40 ? "is-booked" : ""}></td>
                   <td></td>
-                  <td className={i === 60 ? "is-blocked" : ""}></td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -154,6 +218,9 @@ export default function TimeSlot() {
               Update Booking
             </button>
           </div>
+        </div>
+        <div id="booking-summary">
+          <h3>Booking Summary</h3>
         </div>
       </div>
     </section>
