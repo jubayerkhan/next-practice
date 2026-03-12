@@ -92,7 +92,7 @@ export default function TimeSlot() {
           .map(
             (d) =>
               `<p><strong>${d.day.toUpperCase()}</strong>: ${d.times
-                .map((t) => `${t.start - 15} - ${t.end}`)
+                .map((t) => `${t.start} - ${t.end}`)
                 .join(", ")}</p>`,
           )
           .join("");
