@@ -216,7 +216,7 @@ table {
   background-color: #fff1e5;
 }
 .table td {
-  width: 100px;
+  width: 300px;
 }
 .table :where(th, td) {
   padding-block: 0rem;

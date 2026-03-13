@@ -88,14 +88,23 @@ export default function TimeSlot() {
 
       summaryDiv.innerHTML =
         "<h3>Booking Summary</h3>" +
-        summary
-          .map(
-            (d) =>
-              `<p><strong>${d.day.toUpperCase()}</strong>: ${d.times
-                .map((t) => `${t.start} - ${t.end}`)
-                .join(", ")}</p>`,
-          )
-          .join("");
+        summary.map((d) => {
+          const timesDisplay = d.times
+            .map((t) => {
+              let [h, m] = t.start.split(":").map(Number);
+              m -= 15;
+              if (m < 0) {
+                m += 60;
+                h -= 1;
+                // h = (h + 24) % 24;   ← only if you really want wrap-around
+              }
+              const newStart = `${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}`;
+              return `${newStart} - ${t.end}`;
+            })
+            .join(", ");
+
+          return `<p><strong>${d.day.toUpperCase()}</strong>: ${timesDisplay}</p>`;
+        });
 
       console.log(summary);
 
@@ -180,6 +189,8 @@ export default function TimeSlot() {
             {Array.from({ length: 96 }).map((_, i) => {
               const hour = Math.floor((i + 1) / 4);
               const minutes = ((i + 1) % 4) * 15;
+              const hourEnd = Math.floor((i + 1) / 4);
+              const minutesEnd = ((i + 1) % 4) * 15;
 
               const label =
                 hour.toString().padStart(2, "0") +
