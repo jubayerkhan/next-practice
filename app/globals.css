@@ -217,6 +217,7 @@ table {
 }
 .table td {
   width: 300px;
+  height: 25px;
 }
 .table :where(th, td) {
   padding-block: 0rem;
