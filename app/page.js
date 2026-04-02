@@ -16,6 +16,7 @@ import Users from "./components/Users";
 import Posts from "./components/Posts";
 import FetchData from "./components/FetchData";
 import LoadingError from "./components/LoadingError";
+import ShowHide from "./components/ShowHide";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
       {/* <Posts /> */}
       {/* <FetchData /> */}
       <LoadingError />
+      <ShowHide />
     </div>
   );
 }

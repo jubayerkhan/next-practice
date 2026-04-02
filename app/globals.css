@@ -230,6 +230,7 @@ table {
 }
 
 
+
 /* loading styles */
 .loader {
   width: 100%;
@@ -271,3 +272,219 @@ table {
     transform: translateX(420%);
   }
 }
+
+
+  /* Time slot css styles */
+  .available_discard_btn {
+    @apply border border-white text-white text-sm font-medium px-5 md:py-2.5 py-1.5 rounded-lg whitespace-nowrap cursor-pointer;
+  }
+  .available_save_btn {
+    @apply bg-[#073D3F] text-white text-sm font-medium px-5 md:py-2.5 py-1.5 rounded-lg whitespace-nowrap cursor-pointer;
+  }
+  .available_bottom_btns_fixed_div {
+    @apply fixed bottom-4 left-1/2 -translate-x-1/2 z-9999 max-w-122.5 w-full;
+  }
+  .available_bottom_btns_fixed_div_main {
+    @apply bg-black/50 text-white rounded-2xl pr-2.5 pl-5 py-2.5 flex flex-row items-center justify-between gap-1 md:gap-4 shadow-lg z-9999 mx-3 md:mx-0;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  /* Classes */
+  .animate-slideUp {
+    animation: slideUp 0.3s ease-out forwards;
+  }
+
+  .fc .fc-timegrid-slot-label {
+    font-size: 14px !important;
+    color: #848484 !important;
+  }
+
+  .availability-calendar .fc-timegrid-slots tr:first-child .fc-timegrid-slot-label-cushion,
+  .availability-calendar .fc-timegrid-slots tr:nth-child(4n) .fc-timegrid-slot-label-cushion {
+    font-weight: 600 !important;
+    color: #1EC8C8 !important;
+  }
+
+
+  /* Also apply to 24:00 if it appears as 00:00 at the end */
+  .fc .fc-timegrid-slot-label-cushion[data-time="00:00"]:last-of-type {
+    color: #1ec8c8 !important;
+  }
+
+  .animate-slideDown {
+    animation: slideDown 0.25s ease-in forwards;
+  }
+
+  .fc .fc-day-today {
+    background: transparent !important;
+  }
+
+  .fc .fc-timegrid-slot {
+    height: 20px; /* thinner rows like ss */
+    border-color: #e5e7eb; /* light gray */
+  }
+
+  .fc .fc-timegrid-col.fc-day {
+    border-color: #e5e7eb;
+  }
+
+  .fc .fc-timegrid-axis {
+    font-size: 11px;
+    color: #6b7280;
+    width: 48px !important;
+  }
+
+  .fc .fc-col-header-cell-cushion {
+    font-weight: 600;
+    color: #2C2C2C;
+    font-size: 16px;
+    padding: 10px 4px !important;
+  }
+  .fc-event-main > div {
+    padding: 0px !important;
+    border-radius: 0px !important;
+  }
+
+  .fc .fc-timegrid-event {
+    border-radius: 0px !important;
+    margin: 0px -3px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Hide unwanted elements if still visible */
+  .fc .fc-toolbar {
+    display: none !important;
+  }
+  .fc .fc-timegrid-body {
+    overflow-y: hidden !important; /* force no vertical scroll */
+  }
+
+  .fc .fc-timegrid-slot {
+    height: 18px !important; /* make each 15-min slot thinner → fits better on screen */
+    min-height: 18px !important;
+  }
+
+  .fc .fc-timegrid-axis {
+    font-size: 11px;
+    width: 48px !important;
+  }
+
+  .fc .fc-timegrid-event {
+    margin: 1px 3px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  }
+
+  .fc-timegrid-event-harness > .fc-timegrid-event {
+    margin-inline: -2px;
+  }
+  .fc-timegrid-event .fc-event-main {
+    padding: 0px 0px 0px !important;
+  }
+  .fc-timegrid-event,
+  .fc-timegrid-more-link {
+    border-radius: 0px;
+  }
+
+  .fc-timegrid-event,
+  .fc-timegrid-more-link {
+    border-radius: 0px;
+  }
+  /* .fc-v-event .fc-event-main div {
+    border-radius: 0px !important;
+  } */
+
+  /* Time axis labels styling */
+
+  /* All slot labels */
+  .fc .fc-timegrid-slot-label {
+    font-size: 11px;
+    color: #848484; /* default color for 15/30/45 */
+    white-space: nowrap;
+  }
+
+  /* Hour labels (xx:00) - override to your cyan color */
+  .fc
+    .fc-timegrid-slot-label.fc-timegrid-slot-label-frame
+    .fc-timegrid-slot-label-cushion:where(
+      :is([data-time$=":00"], [data-time="24:00"])
+    ) {
+    color: #1ec8c8 !important;
+    font-weight: 600; /* optional: make hours bolder */
+  }
+
+  /* Hide 00:00 label completely (so first visible is 00:15) */
+  .fc .fc-timegrid-slot-label-cushion:where([data-time="00:00"]) {
+    display: none !important;
+  }
+
+  /* Make sure 24:00 appears (FullCalendar sometimes renders it as 00:00 next day) */
+  .fc .fc-timegrid-slot-label-cushion:where([data-time="00:00"]:last-child) {
+    display: block !important;
+    content: "24:00" !important; /* force text if needed */
+    color: #1ec8c8 !important;
+  }
+
+  /* Optional: thinner slots so 24h fits better without huge height */
+  .fc .fc-timegrid-slot {
+    height: 18px !important;
+    min-height: 18px !important;
+  }
+
+  /* Mobile improvements */
+  @media (max-width: 768px) {
+    .fc .fc-timegrid-slot {
+      height: 16px !important; /* even thinner on phones */
+    }
+    .fc .fc-timegrid-axis {
+      font-size: 10px;
+      width: 42px !important;
+    }
+  }
+
+  .fc-timegrid-event {
+    margin-block: 0px;
+  }
+
+  .fc-timegrid-event-harness {
+    margin-inline-end: -2px !important;
+    padding-inline-end: 1px !important;
+    /* margin-inline-start: 2px !important; */
+  }
+
+  /* Apply only on screens smaller than 769px (mobile & tablet) */
+  @media (max-width: 768px) {
+    .fc-timegrid-event-harness {
+      margin-inline-end: 1px !important;
+      padding-inline-end: 1px !important;
+      margin-inline-start: 1px !important;
+    }
+  }
+  /* .fc-timegrid-event-harness > a {
+    margin-inline-end: 2px !important;
+  } */
+
+  /* fc-timegrid-event-harness fc-timegrid-event-harness-inset {
+    margin: 0px !important;
+  } */
