@@ -37,9 +37,9 @@ export default function LoadingError() {
   if (loading) {
     // return <p className="p-4">Loading posts...</p>;
     return (
-        <div className="flex justify-center items-center">
-            <span className="loading loading-infinity loading-xl text-black"></span>
-        </div>
+      <div className="flex justify-center items-center">
+        <span className="loading loading-infinity loading-xl text-black"></span>
+      </div>
     );
   }
   if (error) {

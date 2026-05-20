@@ -14,14 +14,22 @@ export default function BookingCalendar() {
   const summary = useMemo(() => {
     const daysOrder = ["sat", "sun", "mon", "tue", "wed", "thu", "fri"];
     const dayNameToIndex = {
-      sat: 0, sun: 1, mon: 2, tue: 3, wed: 4, thu: 5, fri: 6,
+      sat: 0,
+      sun: 1,
+      mon: 2,
+      tue: 3,
+      wed: 4,
+      thu: 5,
+      fri: 6,
     };
 
     const groupedByDay = {};
 
     events.forEach((ev) => {
       const startDate = new Date(ev.start);
-      const dayName = startDate.toLocaleString("en-US", { weekday: "short" }).toLowerCase();
+      const dayName = startDate
+        .toLocaleString("en-US", { weekday: "short" })
+        .toLowerCase();
       const dayIdx = dayNameToIndex[dayName];
       if (dayIdx === undefined) return;
 
@@ -82,8 +90,8 @@ export default function BookingCalendar() {
           center: "title",
           right: "", // remove dayGrid/month/etc if you want only week view
         }}
-        slotDuration="00:15:00"              // 15 min grid
-        slotLabelInterval="01:00:00"          // show labels every hour
+        slotDuration="00:15:00" // 15 min grid
+        slotLabelInterval="01:00:00" // show labels every hour
         slotLabelFormat={{
           hour: "numeric",
           minute: "2-digit",
@@ -93,12 +101,11 @@ export default function BookingCalendar() {
         slotMinTime="00:00:00"
         slotMaxTime="24:00:00"
         weekends={true}
-        firstDay={6}                          // Saturday = 6 (week starts Sat)
-        editable={true}                       // allow resize/move existing bookings
-        selectable={true}                     // drag to select/create
-        selectOverlap={false}                 // no overlapping new selections
-        selectMirror={true}                   // nice preview during drag
-
+        firstDay={6} // Saturday = 6 (week starts Sat)
+        editable={true} // allow resize/move existing bookings
+        selectable={true} // drag to select/create
+        selectOverlap={false} // no overlapping new selections
+        selectMirror={true} // nice preview during drag
         // When user finishes drag-selection
         select={(selectInfo) => {
           const newEvent = {
@@ -110,22 +117,19 @@ export default function BookingCalendar() {
           setEvents((prev) => [...prev, newEvent]);
           selectInfo.view.calendar.unselect(); // clear selection highlight
         }}
-
         // Click on existing booking → cancel
         eventClick={(clickInfo) => {
           if (window.confirm("Cancel this booking?")) {
             setEvents((prev) =>
-              prev.filter((e) => e.id !== clickInfo.event.id)
+              prev.filter((e) => e.id !== clickInfo.event.id),
             );
             clickInfo.event.remove();
           }
         }}
-
         // Visual style for booked slots
         eventBackgroundColor="#3788d8"
         eventBorderColor="#285e98"
         eventTextColor="white"
-
         events={events} // ← this drives the rendering
       />
 
