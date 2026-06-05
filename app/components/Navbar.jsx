@@ -14,10 +14,10 @@ export default function Glass() {
               Contact
             </li>
             <li className="text-gray-500 hover:text-[#1EC8C8] transition-colors duration-300 cursor-pointer">
-              Contact
+              About
             </li>
             <li className="text-gray-500 hover:text-[#1EC8C8] transition-colors duration-300 cursor-pointer">
-              Contact
+              Blogs
             </li>
           </ul>
         </div>

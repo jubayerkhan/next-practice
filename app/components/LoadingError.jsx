@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function LoadingError() {
@@ -50,7 +51,12 @@ export default function LoadingError() {
       <ul>
         {posts.slice(0, visible).map((post) => (
           <li className="p-2 bg-gray-200 mb-1 rounded" key={post.id}>
-            {post.title}
+            <Link
+              href={`/posts/${post.id}`}
+              className="text-gray-700 hover:underline"
+            >
+              {post.title}
+            </Link>
           </li>
         ))}
       </ul>
