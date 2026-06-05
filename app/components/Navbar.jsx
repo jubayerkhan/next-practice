@@ -4,7 +4,7 @@ import UserIcon from "../assets/user.svg";
 export default function Glass() {
   return (
     <>
-      <nav className="flex justify-between items-center mt-5">
+      <nav className="flex justify-between items-center my-5">
         <div className="p-4 rounded-full bg-gray-200 flex justify-center items-center group cursor-pointer">
           <UserIcon className="cursor-pointer w-6 h-6 text-gray-500 group-hover:text-[#1EC8C8] transition-colors duration-300" />
         </div>

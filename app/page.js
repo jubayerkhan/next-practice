@@ -25,7 +25,9 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <header className="pt-5 mb-5">{/* <FavoriteColor /> */}</header>
+      {/* <header className="pt-5 mb-5">
+        <FavoriteColor />
+      </header> */}
       {/* <Counter2 /> */}
       {/* <Toggle /> */}
       {/* <FeaturesList /> */}

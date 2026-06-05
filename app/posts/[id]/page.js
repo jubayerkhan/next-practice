@@ -10,8 +10,11 @@ export default async function PostDetails({ params }) {
   const post = await res.json();
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
+    <div className="max-w-7xl mx-auto p-6">
+      <div className="flex gap-4 items-center mb-4">
+        <h1 className="text-4xl font-bold">{post.id}.</h1>
+        <h1 className="text-3xl font-bold uppercase">{post.title}</h1>
+      </div>
       <p className="text-gray-700">{post.body}</p>
     </div>
   );

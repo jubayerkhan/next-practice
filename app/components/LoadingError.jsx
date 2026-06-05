@@ -62,7 +62,7 @@ export default function LoadingError() {
       </ul>
       {visible < posts.length && (
         <button
-          className="button_style"
+          className="button_style mb-5"
           onClick={() => setVisible((v) => v + 25)}
         >
           Load more...
