@@ -488,3 +488,12 @@ table {
   /* fc-timegrid-event-harness fc-timegrid-event-harness-inset {
     margin: 0px !important;
   } */
+
+  .parallax {
+  background-image: url('./assets/hero.jpg');
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

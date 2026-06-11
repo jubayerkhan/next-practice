@@ -20,6 +20,7 @@ import LoadingError from "./components/LoadingError";
 import ShowHide from "./components/ShowHide";
 import Glass from "./components/Glass";
 import UserIcon from "./assets/user.svg";
+import ParallaxCard from "./components/ParallaxCard";
 
 export default function Home() {
   return (
@@ -40,6 +41,8 @@ export default function Home() {
       {/* <Users /> */}
       {/* <Posts /> */}
       {/* <FetchData /> */}
+      <div className="parallax"></div>
+      <ParallaxCard />
       <LoadingError />
       {/* <ShowHide /> */}
       {/* <Glass /> */}
